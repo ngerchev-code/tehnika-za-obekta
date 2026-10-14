@@ -22,7 +22,16 @@ jobs:
         working-directory: android
         env:
           VERSION_CODE: ${{ github.run_number }}
-        run: chmod +x gradlew && ./gradlew assembleRelease --no-daemon
+        run: |
+          chmod +x gradlew
+          set +e
+          ./gradlew assembleRelease --no-daemon --stacktrace > ../gradle.log 2>&1
+          code=$?
+          tail -60 ../gradle.log
+          if [ $code -ne 0 ]; then
+            grep -E "What went wrong|error:|Error|FAILURE|Could not|Caused by" -A3 ../gradle.log | head -40 | while IFS= read -r l; do echo "::error::$l"; done
+            exit $code
+          fi
       - run: mv android/app/build/outputs/apk/release/app-release.apk "Tehnika-za-obekta-v1.0.${{ github.run_number }}.apk"
       - uses: actions/upload-artifact@v4
         with:
