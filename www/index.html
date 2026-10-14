@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="bg">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0B5D3F">
+<title>Техника за обекта</title>
+<link rel="icon" href="icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<header class="appbar">
+  <button class="icon-btn" id="backBtn" aria-label="Назад" hidden>
+    <svg viewBox="0 0 24 24"><path d="M15.4 7.4 14 6l-6 6 6 6 1.4-1.4L10.8 12z"/></svg>
+  </button>
+  <div class="appbar-title" id="title">Техника за обекта</div>
+  <button class="icon-btn" id="moreBtn" aria-label="Още">
+    <svg viewBox="0 0 24 24"><path d="M12 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm0 6a2 2 0 1 0 0 4 2 2 0 0 0 0-4z"/></svg>
+  </button>
+</header>
+
+<div id="alertBar" class="alert-bar" hidden></div>
+<main id="view" class="view"></main>
+
+<button id="fab" class="fab" hidden aria-label="Добави">
+  <svg viewBox="0 0 24 24"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6z"/></svg>
+</button>
+
+<nav class="bottomnav" id="nav">
+  <a href="#/" data-tab="home"><svg viewBox="0 0 24 24"><path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/></svg><span>Табло</span></a>
+  <a href="#/clients" data-tab="clients"><svg viewBox="0 0 24 24"><path d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z"/></svg><span>Клиенти</span></a>
+  <a href="#/catalog" data-tab="catalog"><svg viewBox="0 0 24 24"><path d="M3 17v-3l4-6h6l3 4h3a2 2 0 0 1 2 2v3h-1.2a3 3 0 0 1-5.6 0H9.8a3 3 0 0 1-5.6 0H3zm4 1.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zm9 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3zM8 10l-2.7 4H13V10H8z"/></svg><span>Техника</span></a>
+  <a href="#/offers" data-tab="offers"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg><span>Оферти</span></a>
+  <a href="#/calendar" data-tab="calendar"><svg viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 16H5V9h14v11zM7 11h5v5H7z"/></svg><span>Календар</span></a>
+</nav>
+
+<div id="sheet" class="sheet" hidden>
+  <div class="sheet-panel" id="sheetPanel"></div>
+</div>
+<div id="toast" class="toast" hidden></div>
+
+<script src="lib/xlsx.full.min.js"></script>
+<script src="lib/exceljs.min.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

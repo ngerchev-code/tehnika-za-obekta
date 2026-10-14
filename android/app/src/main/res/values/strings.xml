@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Техника за обекта</string>
+    <string name="title_activity_main">Техника за обекта</string>
+    <string name="package_name">bg.ecosol.tehnika</string>
+    <string name="custom_url_scheme">bg.ecosol.tehnika</string>
+</resources>

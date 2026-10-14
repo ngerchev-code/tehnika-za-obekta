@@ -1,0 +1,10 @@
+{
+  "appId": "bg.ecosol.tehnika",
+  "appName": "Техника за обекта",
+  "webDir": "www",
+  "android": { "allowMixedContent": false },
+  "plugins": {
+    "CapacitorHttp": { "enabled": true },
+    "LocalNotifications": { "smallIcon": "ic_stat_notify", "iconColor": "#0B5D3F" }
+  }
+}
